@@ -35,7 +35,14 @@ public class JPCB {
         MonPaneau.setPreferredSize(new Dimension(100,100));
         frame.add(MonPaneau);
 
-        frame.setVisible(true);   
+        frame.setVisible(true);
+        
+        Grille padGrid = new Grille();
+        padGrid.setPasX(10);
+        padGrid.setPasY(15);
+            
+        System.out.println(padGrid.getPasX());
+        System.out.println(padGrid.getPasY());
     }     
 }
  
@@ -50,8 +57,7 @@ class MyPanel extends JPanel {
             Graphics2D g2d = (Graphics2D)g;
             g2d.fillOval(100, 100, 50, 50);
             g2d.setStroke(new BasicStroke(5));
-            g2d.drawLine(50,50,200,200);
-            
+            g2d.drawLine(50,50,200,200);            
         }     
     } 
 
