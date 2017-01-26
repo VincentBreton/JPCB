@@ -25,9 +25,13 @@ public class JPCB {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        int largeur=800;
+        int hauteur=600;
+        
         JFrame frame = new JFrame("JPCB");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(800, 600);
+        frame.setSize(largeur, hauteur);
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
         
@@ -37,12 +41,12 @@ public class JPCB {
 
         frame.setVisible(true);
         
-        Grille padGrid = new Grille();
-        padGrid.setPasX(10);
-        padGrid.setPasY(15);
+        //Grille padGrid = new Grille();
+        //padGrid.setPasX(10);
+        //padGrid.setPasY(15);
             
-        System.out.println(padGrid.getPasX());
-        System.out.println(padGrid.getPasY());
+        //System.out.println(padGrid.getPasX());
+        //System.out.println(padGrid.getPasY());
     }     
 }
  
@@ -57,7 +61,10 @@ class MyPanel extends JPanel {
             Graphics2D g2d = (Graphics2D)g;
             g2d.fillOval(100, 100, 50, 50);
             g2d.setStroke(new BasicStroke(5));
-            g2d.drawLine(50,50,200,200);            
+            g2d.drawLine(50,50,200,200); 
+            
+            g2d.setStroke(new BasicStroke(1)); 
+            Grille maGrille = new Grille(g,this.getWidth(),this.getHeight());         
         }     
     } 
 
